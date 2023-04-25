@@ -10,7 +10,7 @@ resource "aws_docdb_cluster" "docdb" {
 
 resource "aws_docdb_subnet_group" "default" {
   name       = "${var.ENV}-docdb-subnet-group"
-  subnet_ids = data.terraform_remote_state.vpc.outputs.privateSubnet_cidrs
+  subnet_ids =  data.terraform_remote_state.vpc.outputs.privateSubnet_cidrs
   tags = {
     Name = "My docdb subnet group"
   }
