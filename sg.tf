@@ -8,7 +8,7 @@ resource "aws_security_group" "allow_tls-robosop" {
     from_port        = 27017
     to_port          = 27017
     protocol         = "tcp"
-    cidr_blocks      = [data.terraform_remote_state.vpc.outputs.defaultVPCcidr,data.terraform_remote_state.vpc.outputs.ROBO_VPC_ID]
+    cidr_blocks      = [data.terraform_remote_state.vpc.outputs.defaultVPCcidr,data.terraform_remote_state.vpc.outputs.vpc_cidr]
   }
 
   egress {
