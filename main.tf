@@ -4,6 +4,7 @@ resource "aws_docdb_cluster" "default" {
   master_username         = "admin1"
   master_password         = "roboshop1"
   skip_final_snapshot     =  true
+  db_subnet_group_name    =  aws_docdb_subnet_group.default.name
 }
 
 
