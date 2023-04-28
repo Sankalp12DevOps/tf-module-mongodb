@@ -1,5 +1,5 @@
 resource "null_resource" "web" {
-  depends_on = [aws_db_instance.mysql]
+  depends_on = [aws_docdb_cluster.default]
   provisioner "local-exec" {
     command = <<EOF
     wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
