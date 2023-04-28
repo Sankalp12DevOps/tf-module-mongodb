@@ -1,5 +1,5 @@
-resource "null_resource" "web" {
-    depends_on = [aws_docdb_cluster.default]
+resource "null_resource" "docdb" {
+ depends_on = [aws_docdb_cluster.default]
   provisioner "local-exec" {
     command = <<EOF
     curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
