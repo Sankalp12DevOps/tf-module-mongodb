@@ -1,8 +1,8 @@
 resource "aws_docdb_cluster" "default" {
-  cluster_identifier      = "my-docdb-cluster"
-  engine                  = "docdb"
-  master_username         = "admin1"
-  master_password         = "roboshop1"
+  cluster_identifier      =  var.DOCDB_CLUSTER_IDENTIFIER
+  engine                  =  var.DOCDB_ENGINE
+  master_username         =  var.DOCDB_MASTER_USERNAME
+  master_password         =  var.DOCDB_MASTER_PASSWORD
   skip_final_snapshot     =  true
   db_subnet_group_name    =  aws_docdb_subnet_group.default.name
   vpc_security_group_ids  =  [aws_security_group.allow_tls_docdb.id]
