@@ -1,4 +1,4 @@
-resource "aws_security_group" "allow_tls-robosop" {
+resource "aws_security_group" "allow_tls_docdb" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
   vpc_id      = data.terraform_remote_state.vpc.outputs.ROBO_VPC_ID
