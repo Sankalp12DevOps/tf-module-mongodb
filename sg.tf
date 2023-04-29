@@ -5,8 +5,8 @@ resource "aws_security_group" "allow_tls_docdb" {
 
   ingress {
     description      = "allow mongo Connection"
-    from_port        = 27017
-    to_port          = 27017
+    from_port        = var.DOCDB_PORT
+    to_port          = var.DOCDB_PORT
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.defaultVPCcidr,data.terraform_remote_state.vpc.outputs.vpc_cidr]
   }
